@@ -1,0 +1,47 @@
+.header {
+    width: 100%;
+    border-bottom: 1px solid var(--brandMain, #049DD9);
+    background: rgba(6, 12, 19, 0.90);
+    backdrop-filter: blur(4px);
+    color: #fff;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+    position: fixed;
+    z-index: 9999999999999;
+    /* margin-top: 40px; */
+}
+
+.header .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: right;
+    gap: 24px;
+    margin: auto;
+    width: max-content;
+    width: 100%;
+    max-width: 1440px;
+    margin: 24px;
+    margin: auto;
+
+}
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    flex: 1;
+    justify-content: center;
+}
+
+.logo {
+    color: #5EDCD4;
+    text-align: right;
+    font-family: Almarai;
+    font-size: 31px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
