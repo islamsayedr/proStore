@@ -1,0 +1,83 @@
+.hero .container {
+    display: flex;
+    align-items: center;
+}
+
+.content div h1 {
+    color: var(--Theme-White, #FFF);
+    text-align: right;
+    font-family: Almarai;
+    font-size: 76px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 112px;
+    margin-bottom: 8px;
+}
+
+.hero .container img,
+.content {
+    width: 50%;
+}
+
+button.big {
+    display: flex;
+    height: 60px;
+    padding: 0px 30px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    background: var(--Theme-Accent, #5EDCD4);
+    margin-top: 32px;
+}
+
+.services {
+    background: #186BE815;
+}
+
+.services .container .banner {
+    width: 40%;
+}
+.services .container .tabs{
+    width: 20%;
+    padding-left: 10%;
+}
+.services .container .content {
+    width: 40%;
+    padding-left: 24px;
+}
+
+button.md {
+    display: flex;
+    height: 48px;
+    padding: 0px 30px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    background: var(--Theme-Accent, #5EDCD4);
+    margin-top: 32px;
+}
+
+h2 {
+    color: var(--Grays-100, #DBE4E7);
+    text-align: right;
+    font-family: Almarai;
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 64px;
+}
+
+
+
+.plans .container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.cardCont {
+    display: flex;
+    width: 100%;
+    gap: 24px;
+
+}

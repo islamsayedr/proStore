@@ -23,11 +23,6 @@ a {
   text-decoration: none;
 }
 
-/* Set default text color and background color */
-body {
-  color: #333;
-  background-color: #fff;
-}
 
 /* Remove list styles */
 ul, ol {

@@ -11,13 +11,13 @@ export default function Header() {
           <li>المدونة</li>
           <li>اتصل بنا</li>
         </ul>
-        <div>
+        <div className={styles.actions}>
           <img src="/assets/icons/search.svg" alt="" />
-          <div>
+          <div className={styles.user}>
             <img src="/assets/icons/user.svg" alt="" />
             <div>
               <div>محمد على</div>
-              <div>الشهد للمقاولات</div>
+              <span>الشهد للمقاولات</span>
             </div>
           </div>
         </div>
