@@ -18,3 +18,11 @@ button.sec{
 button.dis{
     background: #00645C;
 }
+a.btn{
+    flex: 1;
+}
+a.btn.sec{
+    display: flex;
+    flex: none;
+    width: fit-content !important;
+}

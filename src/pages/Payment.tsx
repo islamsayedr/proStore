@@ -1,25 +1,32 @@
 import { useState } from "react";
 import styles from "./Payment.module.css";
 import Btn from "../comp/shared/Btn";
+import Summary from "../comp/shared/Summary";
+import Options from "../comp/shared/Options";
 
 export default function Payment() {
-  const [content, setContent] = useState("main");
   return (
     <div className={styles.container}>
-      {content === "main" && <Main />}
-      {content === "loading" && <Main />}
-      {content === "sammary" && <Main />}
-      <Sammary />
+      <Main />
+      <Summary />
     </div>
   );
 }
 
 function Main() {
   const [state, setState] = useState("default");
+  const [isSelected, setIsSelected] = useState("")
+
 
   function selectPro() {
     setState("options");
   }
+  function select1() {
+    setIsSelected("1");
+  }function select2() {
+    setIsSelected("2");
+  }
+
   return (
     <div className={styles.main}>
       <h1>اختر وسيلة الدفع</h1>
@@ -37,69 +44,10 @@ function Main() {
         <img src="/assets/imgs/mada.png" alt="" />
         <img src="/assets/imgs/bank.png" alt="" />
       </div>
-      {state === "options" && (
-        <div>
-          <span>الخياريات المتاحة</span>
-          <div className={styles.option}>
-            <span></span>تقسيط المبلغ على 3 اقساط شهرية
-          </div>
-          <div className={styles.option}>
-            <span></span>
-            الدفع بعد 30يوم
-          </div>
-        </div>
-      )}
+      {state === "options" && <Options select1={select1} select2={select2} selected={isSelected}/>}
       <div className={styles.actions}>
         <Btn name="رجوع" type="sec" />
-        <Btn name="المتابعة" status={state === "default" ? "dis" : ""} />
-      </div>
-    </div>
-  );
-}
-
-function Sammary() {
-  return (
-    <div className={styles.summary}>
-      <h4> ملخص الطلب</h4>
-
-      <div className={styles.col}>
-        <label htmlFor="discond">كود الخصم</label>
-        <input type="text" name="discond" placeholder="ادخل الكود..." />
-      </div>
-
-      <div className={`${styles.row} ${styles.group}`}>
-        <div>
-          <span>الشركة</span>
-          <div>الشهد للمقاولات</div>
-        </div>
-        <div>
-          <span>الحساب</span>
-          <div>محمد على</div>
-        </div>
-      </div>
-
-      <div className={`${styles.col} ${styles.group}`}>
-        <div className={styles.row}>
-          <span>سعر الباقة</span>
-          <div>16,000 ر.س</div>
-        </div>
-        <div className={styles.row}>
-          <span>تاريخ الطلب</span>
-          <div>12 مارس 2024</div>
-        </div>
-        <div className={styles.row}>
-          <span>نوع الباقة</span>
-          <div>فضية</div>
-        </div>
-        <div className={styles.row}>
-          <span>قيمة الخصومات</span>
-          <div> 0 ر.س</div>
-        </div>
-      </div>
-
-      <div className={`${styles.row} ${styles.group}`}>
-        <span>اجمالى السعر بعد الخصم</span>
-        <div>16,000 ر.س</div>
+        <Btn name="المتابعة" status={state === "default" ? "dis" : ""} dir={isSelected ==="1" ? "/review1" : "/review2"}/>
       </div>
     </div>
   );

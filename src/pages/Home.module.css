@@ -37,10 +37,12 @@ button.big {
 .services .container .banner {
     width: 40%;
 }
-.services .container .tabs{
+
+.services .container .tabs {
     width: 20%;
     padding-left: 10%;
 }
+
 .services .container .content {
     width: 40%;
     padding-left: 24px;
@@ -80,4 +82,31 @@ h2 {
     width: 100%;
     gap: 24px;
 
+}
+
+@media(max-width: 768px) {
+    .cardCont {
+        flex-direction: column;
+    }
+
+    .hero .container img,
+    .content {
+        width: 100%;
+    }
+
+    .services .container .banner {
+        width: 100%;
+    }
+
+    .services .container .tabs {
+        display: none;
+    }
+
+    .services .container .content {
+        width: 100%;
+    }
+    h1{
+        font-size: 56px !important;
+        line-height: 80px !important;
+    }
 }
