@@ -1,14 +1,12 @@
 import styles from "./Options.module.css";
 
-
-export interface OptionsProps {
+// Define the prop types for the component
+interface Props {
   select1: () => void;
   select2: () => void;
   selected: string;
 }
-
-
-export default function Options({ select1, select2, selected }: OptionsProps) {
+export default function Options({ select1, select2, selected }: Props) {
 
   return (
     <div className={styles.cont}>

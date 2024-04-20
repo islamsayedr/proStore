@@ -4,11 +4,11 @@ import Btn from "../comp/shared/Btn";
 import Summary from "../comp/shared/Summary";
 import Options from "../comp/shared/Options";
 
-export default function Payment() {
+export default function Payment({plan=""}) {
   return (
     <div className={styles.container}>
       <Main />
-      <Summary />
+      <Summary plan={plan}/>
     </div>
   );
 }
@@ -47,7 +47,7 @@ function Main() {
       {state === "options" && <Options select1={select1} select2={select2} selected={isSelected}/>}
       <div className={styles.actions}>
         <Btn name="رجوع" type="sec" />
-        <Btn name="المتابعة" status={state === "default" ? "dis" : ""} dir={isSelected ==="1" ? "/review1" : "/review2"}/>
+        <Btn name="المتابعة" status={state === "default" ? "dis" : ""} dir={isSelected ==="2" ? "/review1" : "/review2"}/>
       </div>
     </div>
   );

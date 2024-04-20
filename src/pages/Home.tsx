@@ -2,7 +2,11 @@ import Footer from "../comp/layout/Footer";
 import Header from "../comp/layout/Header";
 import PricingCard from "../comp/shared/PricingCard";
 import styles from "./Home.module.css";
-export default function Home() {
+interface Props  {
+  selver: () => void ;
+  gold: () => void ;
+}
+export default function Home({ selver, gold} : Props) {
   return (
     <>
       <Header />
@@ -41,6 +45,22 @@ export default function Home() {
           <div className={styles.cardCont}>
               <PricingCard
                 title="25,000 ريال سعودى"
+                sub="الباقة الفضية"
+                points={[
+                  "250,000 ريال سعودى حد اقصى للعلاج.",
+                  "شبكة مستشفيات مكونة من 3 مستشفيات.",
+                  "مستوى الاقامة غرفة مفردة الى جناح عادى.",
+                  "تغطية الأسنان: مغطى ابتداء من 1000 ريال ",
+                  "سعودي مع شمول تنظيف الأسنان من الجير لمرة واحدة بالسنة",
+                  "تغطية النظارات الطبية: ابتداءً من 200 ريال سعودي",
+                  "تغطية العيادات الداخلية: مغطى",
+                ]}
+                action="/payment"
+                actionName="قدم الآن"
+                select={selver}
+              />
+               <PricingCard
+                title="50,000 ريال سعودى"
                 sub="الباقة الذهبية"
                 points={[
                   "500,000 ريال سعودى حد اقصى للعلاج.",
@@ -53,36 +73,7 @@ export default function Home() {
                 ]}
                 action="/payment"
                 actionName="قدم الآن"
-              />
-              <PricingCard
-                title="باقة الشراكة التقنية كخدمة"
-                sub="عقد سنوي او نصف سنوى"
-                points={[
-                  "مدير تقني تنفيذي",
-                  "تطوير المنتج الأولي خلال ٢-٤ شهور",
-                  "موقع ويب للشركة مع صفحة هبوط للمنتج",
-                  "إنشاء وإدارة البريد الإلكتروني وربطه بنطاق المنشأة",
-                  "دعم تقني وصيانة",
-                  "سعر شهري منافس",
-                  "إمكانية التحول إلى شريك تقني كامل بعد التحقق من الفكرة/المنتج",
-                ]}
-                action="/payment"
-                actionName="قدم الآن"
-              />
-              <PricingCard
-                title="باقة الشراكة التقنية كخدمة"
-                sub="عقد سنوي او نصف سنوى"
-                points={[
-                  "مدير تقني تنفيذي",
-                  "تطوير المنتج الأولي خلال ٢-٤ شهور",
-                  "موقع ويب للشركة مع صفحة هبوط للمنتج",
-                  "إنشاء وإدارة البريد الإلكتروني وربطه بنطاق المنشأة",
-                  "دعم تقني وصيانة",
-                  "سعر شهري منافس",
-                  "إمكانية التحول إلى شريك تقني كامل بعد التحقق من الفكرة/المنتج",
-                ]}
-                action="/payment"
-                actionName="قدم الآن"
+                select={gold}
               />
           </div>
         </div>

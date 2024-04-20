@@ -1,5 +1,5 @@
 import styles from './Summary.module.css'
-export default function Sammary() {
+export default function Sammary({plan=""}) {
     return (
       <div className={styles.summary}>
         <h4> ملخص الطلب</h4>
@@ -23,7 +23,7 @@ export default function Sammary() {
         <div className={`${styles.col} ${styles.group}`}>
           <div className={styles.row}>
             <span>سعر الباقة</span>
-            <div>16,000 ر.س</div>
+            <div>{plan==="selver" ? "25,000 ر.س" : "50,000 ر.س"}</div>
           </div>
           <div className={styles.row}>
             <span>تاريخ الطلب</span>
@@ -31,7 +31,7 @@ export default function Sammary() {
           </div>
           <div className={styles.row}>
             <span>نوع الباقة</span>
-            <div>فضية</div>
+            <div>{plan==="selver" ? "فضية" : "ذهبية"}</div>
           </div>
           <div className={styles.row}>
             <span>قيمة الخصومات</span>
@@ -41,7 +41,7 @@ export default function Sammary() {
   
         <div className={`${styles.row} ${styles.group}`}>
           <span>اجمالى السعر بعد الخصم</span>
-          <div>16,000 ر.س</div>
+          <div>{plan==="selver" ? "25,000 ر.س" : "50,000 ر.س"}</div>
         </div>
       </div>
     );

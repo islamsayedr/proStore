@@ -1,13 +1,22 @@
 import { NavLink } from "react-router-dom";
 import Styles from "./PricingCard.module.css";
+interface Props {
+  title: string;
+  sub: string;
+  points: string[];
+  action: string;
+  actionName: string;
+  select: () => void;
+}
 
 export default function PricingCard({
   title = "",
   sub = "",
-  points = {},
+  points,
   action = "",
   actionName = "",
-}) {
+  select
+} : Props) {
   if (!points || !Array.isArray(points)) {
     return null; // or handle the case where points is not valid
   }
@@ -26,7 +35,7 @@ export default function PricingCard({
           );
         })}
       </div>
-      <NavLink to={action}>
+      <NavLink to={action} onClick={select}>
         <button className={Styles.md}>{actionName}</button>
       </NavLink>
     </div>
